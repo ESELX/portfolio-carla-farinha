@@ -2,12 +2,17 @@ var click;
 var clickAltura;
 var clickLargura;
 var ciclo;
+var canvas;
+
+function windowResized() {
+  resizeCanvas($('#page-wrapper').width(), $('#page-wrapper').height());
+}
 
 function setup() {
-altura = window.innerHeight;
-largura = window.innerWidth;
 ciclo = 200;
-createCanvas(largura, altura);
+canvas = createCanvas($('#page-wrapper').width(), $('#page-wrapper').height());
+canvas.position(0,0)
+canvas.style('z-index', '-1');
 }
 
 
